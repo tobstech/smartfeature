@@ -50,7 +50,7 @@ mvn compile quarkus:dev
 
 You can access all api endpoints using the link below (OpenAPI & Swagger UI):
 
-http://localhost:9098/smart-features-api
+http://localhost:9099/smart-features-api
 
 
 ## Packaging and running the application
