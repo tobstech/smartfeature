@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "fee57fd7-12c9-4fdf-8d3b-2d4bf6ed65e9",
+		"name": "Smart Features APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Smart Features",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceId\":1,\r\n    \"featureName\":\"Lighting Control\",\r\n    \"featureType\":\"Lighting\",\r\n    \"featureIdentifier\":\"LIGHT\",\r\n    \"featureCategory\":\"Home Automation\",\r\n    \"featureDescription\":\"Control and automate lighting in your home.\",\r\n    \"featureStatus\":\"ENABLED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9099/smart-features",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"smart-features"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Smart Features",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceId\":1,\r\n    \"featureName\":\"Lighting Control\",\r\n    \"featureType\":\"Lighting\",\r\n    \"featureIdentifier\":\"LIGHT\",\r\n    \"featureCategory\":\"Home Automation\",\r\n    \"featureDescription\":\"Control and automate lighting in your home.\",\r\n    \"featureStatus\":\"ENABLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9099/smart-features",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9099",
+							"path": [
+								"smart-features"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "71"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 201,\n    \"responseMessage\": \"Feature Created Successfully!.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Smart Features",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9099/smart-features",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"smart-features"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Smart Features",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9099/smart-features",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9099",
+							"path": [
+								"smart-features"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "492"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"featureId\": 1,\n        \"serviceId\": 1,\n        \"featureName\": \"Lighting Control\",\n        \"featureType\": \"Lighting\",\n        \"featureIdentifier\": \"LIGHT\",\n        \"featureCategory\": \"Home Automation\",\n        \"featureDescription\": \"Control and automate lighting in your home.\",\n        \"featureStatus\": \"ENABLED\"\n    },\n    {\n        \"featureId\": 2,\n        \"serviceId\": 1,\n        \"featureName\": \"Temperature Control\",\n        \"featureType\": \"Thermostat\",\n        \"featureIdentifier\": \"TEMP\",\n        \"featureCategory\": \"Climate Control\",\n        \"featureDescription\": \"Manage and control temperature settings.\",\n        \"featureStatus\": \"ENABLED\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Search Smart Features",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"featureType\": \"Lighting\",\r\n    \"featureIdentifier\": \"LIGHT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9099/smart-features/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"smart-features",
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Smart Features",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"featureType\": \"Lighting\",\r\n    \"featureIdentifier\": \"LIGHT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9099/smart-features/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9099",
+							"path": [
+								"smart-features",
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "246"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"featureId\": 1,\n        \"serviceId\": 1,\n        \"featureName\": \"Lighting Control\",\n        \"featureType\": \"Lighting\",\n        \"featureIdentifier\": \"LIGHT\",\n        \"featureCategory\": \"Home Automation\",\n        \"featureDescription\": \"Control and automate lighting in your home.\",\n        \"featureStatus\": \"ENABLED\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Smart Features",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9099/smart-features/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9099",
+					"path": [
+						"smart-features",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Smart Features",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9099/smart-features/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9099",
+							"path": [
+								"smart-features",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "71"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Feature Deleted Successfully!.\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,5 @@
+INSERT INTO smart_feature (feature_id, service_id, feature_name, feature_type, feature_identifier, feature_category, feature_description, feature_status) VALUES (1, 1, "Lighting Control", "Lighting", "LIGHT", "Home Automation", "Control and automate lighting in your home.", "ENABLED");
+INSERT INTO smart_feature (feature_id, service_id, feature_name, feature_type, feature_identifier, feature_category, feature_description, feature_status) VALUES (2, 1, "Temperature Control", "Thermostat", "TEMP", "Climate Control", "Manage and control temperature settings.", "ENABLED");
+INSERT INTO smart_feature (feature_id, service_id, feature_name, feature_type, feature_identifier, feature_category, feature_description, feature_status) VALUES (3, 1, "Security Monitoring", "Security", "SECURITY", "Security" "Monitor security aspects of the environment.", "ENABLED");
+
+ALTER SEQUENCE hibernate_sequence RESTART WITH 4;
