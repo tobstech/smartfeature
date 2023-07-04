@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.smartix";
+option java_outer_classname = "SmartFeatureGrpcProto";
+
+package smartfeature;
+
+service SmartFeatureGrpc {
+
+    rpc GetAllSmartFeatures (Empty) returns (GetSmartFeaturesResponse) {}
+
+    rpc CreateSmartFeature (SmartFeatureRequest) returns (SmartFeatureResponse) {}
+
+    rpc SearchSmartFeature (SearchSmartFeatureRequest) returns (GetSmartFeaturesResponse) {}
+
+    rpc DeleteSmartFeatureById (SmartFeatureIDRequest) returns (SmartFeatureResponse) {}
+
+}
+
+message Empty {
+
+}
+
+message GetSmartFeaturesResponse {
+    repeated SmartFeature smartFeatures = 1;
+}
+
+message SmartFeature {
+    int64 featureId = 1;
+    int64 serviceId = 2;
+    string featureName = 3;
+    string featureType = 4;
+    string featureIdentifier = 5;
+    string featureCategory = 6;
+    string featureDescription = 7;
+    string featureStatus = 8;
+}
+
+message SmartFeatureRequest {
+    int64 serviceId = 1;
+    string featureName = 2;
+    string featureType = 3;
+    string featureCategory = 4;
+    string featureDescription = 5;
+    string featureIdentifier = 6;
+    string featureStatus = 7;
+}
+
+message SmartFeatureResponse {
+    int64 responseCode = 1;
+    string responseMessage = 2;
+}
+
+message SearchSmartFeatureRequest {
+    int64 featureId = 1;
+    int64 serviceId = 2;
+    string featureName = 3;
+    string featureType = 4;
+    string featureCategory = 5;
+    string featureIdentifier = 6;
+    string featureStatus = 7;
+}
+
+message SmartFeatureIDRequest {
+    int64 featureId = 1;
+}

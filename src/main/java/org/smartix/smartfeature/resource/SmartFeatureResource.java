@@ -1,5 +1,6 @@
 package org.smartix.smartfeature.resource;
 
+import io.quarkus.grpc.GrpcClient;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -11,6 +12,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.smartix.SmartFeatureGrpc;
 import org.smartix.smartfeature.entity.SmartFeature;
 import org.smartix.smartfeature.models.Responses;
 import org.smartix.smartfeature.models.SearchCriteria;
@@ -28,6 +30,8 @@ public class SmartFeatureResource {
 
     @Inject
     SmartFeatureRepository smartFeatureRepository;
+    @GrpcClient("smartFeature")
+    SmartFeatureGrpc smartFeatureGrpc;
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(
